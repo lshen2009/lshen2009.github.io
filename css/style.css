@@ -1,0 +1,100 @@
+/*=====for slider ====*/
+body {
+    font-family: Helvetica, sans-serif;
+    padding: 40px;
+}
+
+.countries {
+    stroke: #fff;
+    stroke-width: 1px;
+}
+
+.legendLinear text {
+    font-size: 9px;
+}
+
+.chroniton text {
+    font-size: 10px;
+    color: gray;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.x.axis, .slider text {
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  user-select:none;
+}
+.x.axis path.domain {
+  stroke-width:10;
+  stroke-linecap:round;
+  stroke:#ddd;
+}
+.x.axis path.halo {
+  stroke-width:12;
+  stroke-linecap:round;
+  stroke:#ccc;
+}
+.tick line {
+  stroke:#d0d0d0;
+  stroke-width:1;
+  transform:translate(0px, -5px);
+}
+.slider .handle {
+  fill: #fff;
+  stroke-width:1;
+  stroke:#333;
+}
+.slider .handle, .slider text {
+  cursor: move;
+  cursor: -webkit-grab;
+  transition:fill 200ms ease-in-out;
+}
+.handle:active, .slider text:active {
+  cursor: move;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
+.slider.brushing.handle {
+  fill: #eee;
+}
+
+/*=====for tooltip ====*/
+div.tooltip {	
+    position: absolute;			
+    text-align: center;			
+    width: 60px;					
+    height: 32px;					
+    padding: 2px;				
+    font: 12px sans-serif;		
+    background: lightsteelblue;	
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;			
+}
+
+/*Plot a line*/
+#line-chart path { 
+    stroke: #1b68e5;
+    stroke-width: 2;
+    fill: none;
+}
+
+#line-chart .axis path,
+#line-chart .axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
+/*brush */
+.brush .extent {
+  stroke: #fff;
+  fill-opacity: .125;
+  shape-rendering: crispEdges;
+}
