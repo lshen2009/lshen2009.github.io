@@ -20,14 +20,14 @@ vis.div = d3.select("#" +vis.parentElement).append("div")
 	    .style("opacity", 0);
 	
 vis.xAxis = d3.svg.axis().scale(vis.x).orient("bottom")
-	.ticks(10).tickFormat(d3.format("4"));	
+	.ticks(5).tickFormat(d3.format("4"));	
 vis.yAxis = d3.svg.axis().scale(vis.y).orient("left").ticks(5);	
 vis.valueline = d3.svg.line()
  	.defined(function(d){return d.values != null && d.values != undefined})
     .x(function(d) { return vis.x(d.key); })
     .y(function(d) { return vis.y(+d.values); });	
 
-vis.x.domain([1989.5,2010.5]);
+vis.x.domain([1989.5,2016.5]);
 vis.y.domain(d3.extent(vis.one_site, function(d){ return d.values }));
 vis.colorScale = d3.scale.linear().range(["#f4e542", "#f44b42"])
 		.interpolate(d3.interpolateLab).domain([30,60])
@@ -95,7 +95,7 @@ LineChart.prototype.update=function(){
 var vis=this
 this.selected_sites();	
 //console.log(vis.ID)	
-vis.x.domain([1989.5,2010.5]);
+vis.x.domain([1989.5,2016.5]);
 vis.y.domain(d3.extent(vis.one_site, function(d){ return d.values }));
 	
 vis.circles = vis.svg2.selectAll("circle").data(vis.one_site_filter);	

@@ -1,6 +1,6 @@
 var dateFormat = d3.time.format("%Y");
 var slider = chroniton()
-      .domain([dateFormat.parse("1990"),dateFormat.parse("2010")])
+      .domain([dateFormat.parse("1990"),dateFormat.parse("2016")])
       .labelFormat(d3.time.format('%Y'))
 	  .tapAxis(function(axis) { axis.ticks(15) })
       .width(450)
@@ -26,7 +26,7 @@ function parse_data(d){
 
 queue()
     .defer(d3.json, "./data/us-states.json")    
-	.defer(d3.csv,"./data/CASTNET_O3.csv",parse_data)
+	.defer(d3.csv,"./data/CASTNET_1990-2016.csv",parse_data)
     .await(draw_map)
 
 function filter_year(year){
