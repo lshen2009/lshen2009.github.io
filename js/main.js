@@ -51,6 +51,7 @@ function draw_map(error, us_states, ozone){
 		  filterValue=+filterValue		  
           areachart.ozonedata=filter_year(filterValue);
 		  linechart.moving_line()
+		  areachart.updateVis()
    });   
 	
 }

@@ -15,7 +15,6 @@ this.site_info=d3.nest()
 	})
 	.entries(this.ozonedata)	
 	this.initVis();	
-//console.log(this.site_info)
 }
 
 MapChart.prototype.initVis = function(){	
@@ -123,7 +122,6 @@ function brushed() {
 vis.draw_points()	
 }
 
-
 MapChart.prototype.draw_points=function(){		
 var vis=this	
 var yearly_ozone=d3.nest()
@@ -187,12 +185,12 @@ vis.svg.selectAll("circle").data(yearly_ozone)
 	.attr("r", function(d) {
 		return (d.values.avg == null)? 3:5
 	})	
-	.attr("stroke", function(d){
-		return d.key == vis.ID ? "black":"none"
-	})
-	.attr("class", function(d){
-		return d.key == vis.ID ? "selected":"unslected"
-	})
+//	.attr("stroke", function(d){
+//		return d.key == vis.ID ? "black":"none"
+//	})
+//	.attr("class", function(d){
+//		return d.key == vis.ID ? "selected":"unslected"
+//	})
 	.on("mouseover", function(d) { 
 		d3.select(this).attr("r", function(d) {
 		return 9;
