@@ -73,9 +73,12 @@ vis.circles.enter().append("circle")
 		   vis.div.transition()		
            .duration(200)		
            .style("opacity", .9);	
-           vis.div.html(d.key + "<br/>"  +d.values.toFixed(1)+" ppbv")	
-           .style("left", (d3.event.pageX-580) + "px")		
-           .style("top", (d3.event.pageY-140) + "px");	
+           vis.div.html(d.key + "<br/>"  +d.values.toFixed(1)+" ppbv")	     .style("left", d3.select(this).attr("cx") + "px")		
+             .style("top",  d3.select(this).attr("cy") + "px");			   
+//           .style("left", (d3.event.pageX-580) + "px")		
+//           .style("top", (d3.event.pageY-140) + "px");	
+//		    console.log(d3.event.pageX)	
+//			console.log(d3.select(this))
 	   })
 	   .on("mouseout", function(d){
 		   d3.select(this).attr("r", 5)

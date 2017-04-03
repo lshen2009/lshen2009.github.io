@@ -207,10 +207,12 @@ vis.svg.selectAll("circle").data(yearly_ozone)
 		} else {
 			text=conc.toFixed(1)+" ppbv"
 		}
-		
+//		console.log(d3.event.pageY)
         vis.div.html(filterValue + "<br/>"  +text)	
-           .style("left", (d3.event.pageX-100) + "px")		
-           .style("top", (d3.event.pageY-155) + "px");					
+           .style("left", d3.select(this).attr("cx") + "px")		
+           .style("top",  d3.select(this).attr("cy")-(-20) + "px");		
+//           .style("left", (d3.event.pageX-100) + "px")		
+//           .style("top",  (d3.event.pageY-135) + "px");					
 	})
     .on("mouseout", function(d) {  
 		vis.div.transition()		
