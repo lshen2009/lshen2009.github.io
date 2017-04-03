@@ -6,6 +6,7 @@ var slider = chroniton()
       .width(450)
       .height(50)
 	  .loop(true)
+//	  .play()
       .playButton(true) 
 	  .playbackRate(0.3)
 
@@ -49,7 +50,6 @@ function draw_map(error, us_states, ozone){
           filterValue = dateFormat(d3.time.year(d));	
 		  filterValue=+filterValue		  
           areachart.ozonedata=filter_year(filterValue);
-	   	  areachart.updateVis()	
 		  linechart.moving_line()
    });   
 	

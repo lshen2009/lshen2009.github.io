@@ -54,6 +54,17 @@ vis.svg2.append("g")
     .attr("class", "y axis")
     .call(vis.yAxis);	
 
+vis.svg2.append("text")
+   .attr("transform", "rotate(-90)")
+   .attr("y", -42)
+   .attr("x", -50)
+  .style("font-size", "16px")
+   .attr("dy", ".71em")
+   .style("text-anchor", "end")
+   .attr("class", "shadow")
+   .text("MDA8 Ozone (ppbv)");	
+	
+	
 vis.circles = vis.svg2.selectAll("circle")
                      .data(vis.one_site_filter);	
 vis.circles.enter().append("circle")	   

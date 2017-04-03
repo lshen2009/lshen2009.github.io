@@ -60,6 +60,16 @@ vis.legendLinear = d3.legend.color()
 vis.svg.select(".legendLinear")
       .call(vis.legendLinear);      		
 
+vis.svg.append("text")
+//   .attr("transform", "rotate(-90)")
+   .attr("y", 320)
+   .attr("x", 360)
+   .attr("dy", ".71em")
+   .style("font-size", "16px")
+   .style("text-anchor", "end")
+   .attr("class", "shadow")
+   .text("ppbv");
+	
 //===== brush ====
 vis.x = d3.scale.linear()
     .range([0, vis.width]);
@@ -99,8 +109,13 @@ function brushed() {
 		}
 	})
 //	console.log([vis.ID,lon_range, lat_range])
+	
 	linechart.ID=vis.ID
 	linechart.update()
+	
+	d3.select(".selected")
+	  .attr("stroke","none")
+	  .attr("class","unselected")			
 }	
 	
 	
@@ -180,7 +195,7 @@ vis.svg.selectAll("circle").data(yearly_ozone)
 	})
 	.on("mouseover", function(d) { 
 		d3.select(this).attr("r", function(d) {
-		return 8;
+		return 9;
 		})   
         vis.div.transition()		
            .duration(200)		
@@ -195,7 +210,7 @@ vis.svg.selectAll("circle").data(yearly_ozone)
 		
         vis.div.html(filterValue + "<br/>"  +text)	
            .style("left", (d3.event.pageX-100) + "px")		
-           .style("top", (d3.event.pageY-135) + "px");					
+           .style("top", (d3.event.pageY-155) + "px");					
 	})
     .on("mouseout", function(d) {  
 		vis.div.transition()		
@@ -206,6 +221,7 @@ vis.svg.selectAll("circle").data(yearly_ozone)
 		})	  
     })	
 	.on("click", function(d){
+		d3.selectAll(".brush").call(vis.brush.clear());//This is used to clear the brush
 		linechart.ID=[+d.key]		
 		linechart.update()			
 		d3.select(".selected")
