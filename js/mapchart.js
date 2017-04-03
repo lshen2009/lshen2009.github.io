@@ -117,8 +117,6 @@ function brushed() {
 	  .attr("class","unselected")			
 }	
 	
-	
-//========================================	
 vis.draw_points()	
 }
 
@@ -156,11 +154,18 @@ vis.site_obs.transition()
 	.attr("r", function(d) {
 		return (d.values.avg == null)? 3:5
 	})
-
 	
 vis.site_obs.exit().remove();	
-	
 vis.updateVis()	
+//------------
+vis.svg.selectAll("circle")
+	.attr("stroke", function(d){
+		return d.key == vis.ID ? "black":"none"
+	})
+	.attr("class", function(d){
+		return d.key == vis.ID ? "selected":"unslected"
+	})
+//------------	
 }
 
 MapChart.prototype.updateVis = function(){	
