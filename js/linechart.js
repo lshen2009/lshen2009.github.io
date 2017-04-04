@@ -10,9 +10,9 @@ LineChart.prototype.initVis = function(){
 var vis = this;	
 this.selected_sites()
 
-vis.margin = {top: 30, right: 20, bottom: 30, left: 50},
+vis.margin = {top: 30, right: 20, bottom: 120, left: 50},
     vis.width = 500 - vis.margin.left - vis.margin.right,
-    vis.height = 300 - vis.margin.top - vis.margin.bottom;
+    vis.height = 400 - vis.margin.top - vis.margin.bottom;
 vis.x = d3.scale.linear().range([0, vis.width]);
 vis.y = d3.scale.linear().range([vis.height, 0]);
 vis.div = d3.select("#" +vis.parentElement).append("div")	
@@ -28,7 +28,8 @@ vis.valueline = d3.svg.line()
     .y(function(d) { return vis.y(+d.values); });	
 
 vis.x.domain([1989.5,2016.5]);
-vis.y.domain(d3.extent(vis.one_site, function(d){ return d.values }));
+ss=d3.extent(vis.one_site, function(d){ return d.values })	
+vis.y.domain([ss[0]-5,ss[1]]);
 vis.colorScale = d3.scale.linear().range(["#f4e542", "#f44b42"])
 		.interpolate(d3.interpolateLab).domain([30,60])
 
@@ -64,6 +65,25 @@ vis.svg2.append("text")
    .attr("class", "shadow")
    .text("MDA8 Ozone (ppbv)");	
 	
+vis.svg2.append("text")
+   .attr("y", 290)
+   .attr("x", 420)
+   .attr("dy", ".71em")
+   .style("font-size", "16px")
+   .style("text-anchor", "end")
+   .style("fill","#686b70")
+   .attr("class", "shadow")
+   .text("Acknowledgments: EPA and NASA");
+
+vis.svg2.append("text")
+   .attr("y", 310)
+   .attr("x", 420)
+   .attr("dy", ".71em")
+   .style("font-size", "16px")
+   .style("text-anchor", "end")
+   .style("fill", "#686b70")
+   .attr("class", "shadow")
+   .text("htpps://lshen2009.github.io");	
 	
 vis.circles = vis.svg2.selectAll("circle")
                      .data(vis.one_site_filter);	
@@ -110,7 +130,8 @@ var vis=this
 this.selected_sites();	
 //console.log(vis.ID)	
 vis.x.domain([1989.5,2016.5]);
-vis.y.domain(d3.extent(vis.one_site, function(d){ return d.values }));
+ss=d3.extent(vis.one_site, function(d){ return d.values })	
+vis.y.domain([ss[0]-5,ss[1]]);	
 	
 vis.circles = vis.svg2.selectAll("circle").data(vis.one_site_filter);	
 vis.circles.enter().append("circle")	
