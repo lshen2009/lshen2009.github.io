@@ -60,7 +60,6 @@ vis.svg.select(".legendLinear")
       .call(vis.legendLinear);      		
 
 vis.svg.append("text")
-//   .attr("transform", "rotate(-90)")
    .attr("y", 320)
    .attr("x", 360)
    .attr("dy", ".71em")
@@ -68,7 +67,27 @@ vis.svg.append("text")
    .style("text-anchor", "end")
    .attr("class", "shadow")
    .text("ppbv");
+
+vis.svg.append("text")
+   .attr("y", 360)
+   .attr("x", 20)
+   .attr("dy", ".71em")
+   .style("font-size", "16px")
+   .style("text-anchor", "start")
+   .style("fill", "#686b70")
+   .attr("class", "shadow")
+   .text("(1) Click on the sites, or use mouse to highlight a region.");
 	
+vis.svg.append("text")
+   .attr("y", 380)
+   .attr("x", 20)
+   .attr("dy", ".71em")
+   .style("font-size", "16px")
+   .style("text-anchor", "start")
+   .style("fill", "#686b70")
+   .attr("class", "shadow")
+   .text("(2) Push slider to see trends");	
+//, or push slider to see trends.	
 //===== brush ====
 vis.x = d3.scale.linear()
     .range([0, vis.width]);

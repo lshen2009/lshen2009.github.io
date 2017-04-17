@@ -83,7 +83,7 @@ vis.svg2.append("text")
    .style("text-anchor", "end")
    .style("fill", "#686b70")
    .attr("class", "shadow")
-   .text("htpps://lshen2009.github.io");	
+   .text("https://lshen2009.github.io");	
 	
 vis.circles = vis.svg2.selectAll("circle")
                      .data(vis.one_site_filter);	
