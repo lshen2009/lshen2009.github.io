@@ -69,7 +69,7 @@ vis.svg.append("text")
    .text("ppbv");
 
 vis.svg.append("text")
-   .attr("y", 360)
+   .attr("y", 365)
    .attr("x", 20)
    .attr("dy", ".71em")
    .style("font-size", "16px")
@@ -79,7 +79,7 @@ vis.svg.append("text")
    .text("(1) Click on the sites, or use mouse to highlight a region.");
 	
 vis.svg.append("text")
-   .attr("y", 380)
+   .attr("y", 385)
    .attr("x", 20)
    .attr("dy", ".71em")
    .style("font-size", "16px")
