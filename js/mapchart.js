@@ -21,7 +21,7 @@ MapChart.prototype.initVis = function(){
 	var vis = this;		
 	vis.margin = {top: 0, right: 0, bottom: 0, left: 0};
 	vis.width = 480 - vis.margin.left - vis.margin.right,
-  	vis.height= 400 - vis.margin.top - vis.margin.bottom;	
+  	vis.height= 420 - vis.margin.top - vis.margin.bottom;	
 	vis.projection = d3.geo.albersUsa()
 				   .translate([vis.width*0.45, vis.height*0.4])
 				   .scale([600]); 
