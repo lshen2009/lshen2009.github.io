@@ -28,7 +28,7 @@ var handleRadius = 6,
   ].join(',');
 
 function chroniton() {
-  var margin = {top: 10, right: 20, bottom: 20, left: 20},
+  var margin = {top: 10, right: 20, bottom: 25, left: 20},
     domain = [new Date('1/1/2000'), new Date()],
     width = 660,
     height = 50,
@@ -114,7 +114,7 @@ function chroniton() {
 
       if (playButton) {
         var playButtonG = svg.append('g')
-          .attr('transform', 'translate(' + [8, margin.top + 13] + ')');
+          .attr('transform', 'translate(' + [8, margin.top + 10] + ')');
         var playIcon = playButtonG.append('path')
           .attr('transform', 'translate(2, 2)')
           .attr('d', playD)
